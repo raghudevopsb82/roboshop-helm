@@ -7,8 +7,6 @@ service:
 
 env: dev
 
-deployment:
-  replicas: 1
 
 
 
