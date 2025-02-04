@@ -1,0 +1,14 @@
+appName: frontend
+
+service:
+  containerPort: 80
+  servicePort: 80
+  type: LoadBalancer
+
+env: dev
+
+deployment:
+  replicas: 1
+
+
+
