@@ -1,5 +1,6 @@
 {{ if .Values.dbJob.enabled }}
 {{- range .Values.dbJob.jobName }}
+---
 apiVersion: batch/v1
 kind: Job
 metadata:
