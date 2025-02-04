@@ -1,11 +1,11 @@
 default:
-	helm install $(appName) . -f env-$(env)/$(appName).yaml
+	helm upgrade -i $(appName) . -f env-$(env)/$(appName).yaml
 
 dev:
 	git pull
-	helm install cart . -f env-dev/cart.yaml
-	helm install catalogue . -f env-dev/catalogue.yaml
-	helm install user . -f env-dev/user.yaml
-	helm install payment . -f env-dev/payment.yaml
-	helm install shipping . -f env-dev/shipping.yaml
-	helm install frontend . -f env-dev/frontend.yaml
+	helm upgrade -i cart . -f env-dev/cart.yaml
+	helm upgrade -i catalogue . -f env-dev/catalogue.yaml
+	helm upgrade -i user . -f env-dev/user.yaml
+	helm upgrade -i payment . -f env-dev/payment.yaml
+	helm upgrade -i shipping . -f env-dev/shipping.yaml
+	helm upgrade -i frontend . -f env-dev/frontend.yaml
