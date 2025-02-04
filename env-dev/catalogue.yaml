@@ -1,5 +1,7 @@
 appName: catalogue
 env: dev
 
+dbJob:
+  enabled: true
 
 

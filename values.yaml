@@ -5,3 +5,6 @@ service:
 
 deployment:
   replicas: 1
+
+dbJob:
+  enabled: false
