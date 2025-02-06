@@ -4,6 +4,6 @@ As of now following resources are installed
   - Secret Store
   - Deployment
   - Service
-{{ if .Values.dbJob.enabled }}
+{{- if .Values.dbJob.enabled }}
   - DB Job
 {{ end }}
