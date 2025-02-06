@@ -2,8 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.appName }}
-  labels:
-    app: {{ .Values.appName }}
+  {{- template "common.labels" }}
 spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
@@ -11,8 +10,7 @@ spec:
       app: {{ .Values.appName }}
   template:
     metadata:
-      labels:
-        app: {{ .Values.appName }}
+      {{- template "common.labels" }}
     spec:
       containers:
       - name: {{ .Values.appName }}
