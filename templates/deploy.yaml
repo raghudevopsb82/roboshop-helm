@@ -2,15 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.appName }}
-  {{- template "common.labels" }}
+  labels:
+{{ include "common.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.appName }}
+    {{ include "common.labels" . | indent 6 }}
   template:
     metadata:
-      {{- template "common.labels" }}
+      labels:
+      {{ include "common.labels" . | indent 8 }}
     spec:
       containers:
       - name: {{ .Values.appName }}
