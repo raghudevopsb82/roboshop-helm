@@ -1,7 +1,9 @@
 app_name=$1
 env=$2
 
-source ~/.bashrc
+source ~/.bash_profile
+
+echo $PATH
 
 if [ -z "$app_name" -o -z "$env" ]; then
   echo Input AppName or env is missing
