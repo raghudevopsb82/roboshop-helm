@@ -1,9 +1,7 @@
 app_name=$1
 env=$2
 
-source ~/.bash_profile
-
-echo $PATH
+export PATH=/github-runner/.local/bin:/github-runner/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 
 if [ -z "$app_name" -o -z "$env" ]; then
   echo Input AppName or env is missing
