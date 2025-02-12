@@ -1,6 +1,8 @@
 app_name=$1
 env=$2
 
+source ~/.bashrc
+
 if [ -z "$app_name" -o -z "$env" ]; then
   echo Input AppName or env is missing
   exit 1
