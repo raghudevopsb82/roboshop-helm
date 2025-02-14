@@ -9,3 +9,13 @@ dev:
 	helm upgrade -i payment . -f env-dev/payment.yaml
 	helm upgrade -i shipping . -f env-dev/shipping.yaml
 	helm upgrade -i frontend . -f env-dev/frontend.yaml
+
+argocd:
+	git pull
+	bash argocd.sh cart dev
+	bash argocd.sh catalogue dev
+	bash argocd.sh user dev
+	bash argocd.sh shipping dev
+	bash argocd.sh payment dev
+	bash argocd.sh frontend dev
+
