@@ -6,6 +6,8 @@ service:
 
 env: dev
 
+ingress:
+  enabled: true
 
 
 

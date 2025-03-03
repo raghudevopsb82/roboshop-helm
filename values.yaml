@@ -8,3 +8,7 @@ deployment:
 
 dbJob:
   enabled: false
+
+ingress:
+  enabled: false
+
