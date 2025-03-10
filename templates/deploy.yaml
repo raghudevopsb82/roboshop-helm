@@ -15,7 +15,7 @@ spec:
       {{- include "common.labels" . | indent 8 }}
     spec:
       containers:
-      - name: {{ .Values.appName }}
+      - name: roboshop-{{ .Values.appName }}
         image: {{ .Values.appImage }}
         ports:
         - containerPort: {{ .Values.service.containerPort }}
