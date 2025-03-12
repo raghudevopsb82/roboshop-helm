@@ -7,7 +7,7 @@ export PATH=/github-runner/.local/bin:/github-runner/bin:/usr/local/bin:/usr/bin
 ARGOCD_LOGIN() {
     argocd_ip=$(kubectl get svc -n argocd argocd-server -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
     argocd_password=$(kubectl get secret argocd-initial-admin-secret -n argocd -o=jsonpath='{.data.password}' | base64 --decode)
-    argocd login argocd-$env.azdevopsb82.online:443 --insecure --username admin --password ${argocd_password}
+    argocd login argocd-$env.azdevopsb82.online:443 --insecure --username admin --password ${argocd_password} --grpc-web
 }
 
 if [ -z "$app_name" -o -z "$env" ]; then
@@ -29,6 +29,6 @@ if [ $? -ne 0 ]; then
   ARGOCD_LOGIN
 fi
 
-argocd app create --upsert ${app_name} --repo https://github.com/raghudevopsb82/roboshop-helm.git --dest-namespace default --dest-server https://kubernetes.default.svc --values env-${env}/${app_name}.yaml  --path . --helm-set appImage=$appImage
-argocd app sync ${app_name}
+argocd app create --upsert ${app_name} --repo https://github.com/raghudevopsb82/roboshop-helm.git --dest-namespace default --dest-server https://kubernetes.default.svc --values env-${env}/${app_name}.yaml  --path . --helm-set appImage=$appImage --grpc-web
+argocd app sync ${app_name} --grpc-web
 
