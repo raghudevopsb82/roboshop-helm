@@ -12,8 +12,7 @@ spec:
     spec:
       containers:
       - name: {{ $.Values.appName }}-schema
-        image: roboshopb82new.azurecr.io/roboshop-shipping-schema-loader:latest
-        imagePullPolicy: Always
+        image: {{ $.Values.dbJob.image }}
         env:
           - name: SCHEMA_FILE
             value: "db/{{ .file }}"

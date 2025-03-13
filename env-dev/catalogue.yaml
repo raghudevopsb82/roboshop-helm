@@ -3,6 +3,7 @@ env: dev
 
 dbJob:
   enabled: true
+  image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
   jobName:
     - file: master-data.js
       name: master-data
