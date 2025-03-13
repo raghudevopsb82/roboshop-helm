@@ -26,3 +26,17 @@ spec:
         envFrom:
           - secretRef:
               name: {{ .Values.appName }}
+        livenessProbe:
+          httpGet:
+            path: /health
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          failureThreshold: 1
+        readinessProbe:
+          httpGet:
+            path: /health
+          initialDelaySeconds: 15
+          periodSeconds: 10
+          failureThreshold: 30
+
+
