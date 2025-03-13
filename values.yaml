@@ -4,7 +4,7 @@ service:
   type: ClusterIP
 
 deployment:
-  replicas: 1
+  replicas: 2
 
 dbJob:
   enabled: false
