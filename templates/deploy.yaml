@@ -29,12 +29,14 @@ spec:
         livenessProbe:
           httpGet:
             path: /health
+            port: {{ .Values.service.containerPort }}
           initialDelaySeconds: 5
           periodSeconds: 5
           failureThreshold: 1
         readinessProbe:
           httpGet:
             path: /health
+            port: {{ .Values.service.containerPort }}
           initialDelaySeconds: 15
           periodSeconds: 10
           failureThreshold: 30
