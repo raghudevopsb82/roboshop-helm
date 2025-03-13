@@ -12,7 +12,8 @@ spec:
     spec:
       containers:
       - name: {{ $.Values.appName }}-schema
-        image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+        image: roboshopb82new.azurecr.io/roboshop-shipping-schema-loader:latest
+        imagePullPolicy: Always
         env:
           - name: SCHEMA_FILE
             value: "db/{{ .file }}"
