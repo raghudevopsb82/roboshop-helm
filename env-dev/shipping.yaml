@@ -13,3 +13,12 @@ dbJob:
 #       name: schema
 #     - file: master-data.sql
 #       name: master-data
+
+resources:
+  limits:
+    cpu: "1000m"
+    memory: "2000Mi"
+  requests:
+    cpu: "900m"
+    memory: "900Mi"
+
