@@ -16,9 +16,9 @@ dbJob:
 
 resources:
   limits:
-    cpu: "1000m"
-    memory: "2000Mi"
+    cpu: "1800m"
+    memory: "4000Mi"
   requests:
-    cpu: "900m"
-    memory: "900Mi"
+    cpu: "1500m"
+    memory: "2000Mi"
 
