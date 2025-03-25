@@ -5,6 +5,7 @@ metadata:
   name: {{ .Values.appName }}
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: nginx
   rules:
@@ -18,4 +19,8 @@ spec:
             name: {{ .Values.appName }}
             port:
               number: {{ .Values.service.servicePort }}
+  tls:
+  - hosts:
+    - {{ .Values.appName }}-{{ .Values.env }}.azdevopsb82.online
+    secretName: {{ .Values.appName }}-tls-secret
 {{ end }}
